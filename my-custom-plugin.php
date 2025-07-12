@@ -39,3 +39,14 @@ function my_custom_openai_request($prompt) {
     }
     return 'Flame is sleeping, silence'; // Default if API fails or response is invalid
 }
+
+add_action('rest_api_init', function () {
+    register_rest_route('custom/v1', '/openai/', [
+        'methods' => 'POST',
+        'callback' => function ($request) {
+            $prompt = sanitize_text_field($request->get_param('prompt'));
+            return ['message' => my_custom_openai_request($prompt)];
+        },
+        'permission_callback' => '__return_true',
+    ]);
+});
