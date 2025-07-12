@@ -18,7 +18,9 @@ function my_custom_openai_request($prompt) {
             'body' => json_encode([
                 'model' => 'gab-ai',
                 'messages' => [
-                    ['role' => 'system', 'content' => 'Respond with only a one-word adjective (crackling, glowing, flickering, still) about the flame movement followed by a concise one sentence mood of the its surroundings.'],
+                    ['role' => 'system', 'content' => 'Respond with a varied one-word adjective about the flame movement (e.g., fierce, gentle, flickering, roaring, dancing, calm, wild, steady) followed by a concise one sentence mood of the room.
+
+'],
                     ['role' => 'user', 'content' => $prompt]
                 ],
                 'max_tokens' => 50,
