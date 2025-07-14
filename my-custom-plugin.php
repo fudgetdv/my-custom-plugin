@@ -33,11 +33,11 @@ function my_custom_openai_request($prompt) {
                 list($adjective_part, $sentence) = explode(',', $response_text, 2);
                 $adjective = trim($adjective_part);
                 $sentence = trim($sentence);
-                return "Flame is $adjective, $sentence.";
+                return "$adjective, $sentence.";
             }
         }
     }
-    return 'Flame is sleeping, silence'; // Default if API fails or response is invalid
+    return 'Flame is sleeping, the haunting is taking a rest.  Come back soon.'; // Default if API fails or response is invalid
 }
 
 add_action('rest_api_init', function () {
