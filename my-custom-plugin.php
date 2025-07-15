@@ -18,7 +18,7 @@ function my_custom_openai_request($prompt) {
             'body' => json_encode([
                 'model' => 'gab-ai',
                 'messages' => [
-                    ['role' => 'Suspence Writer', 'content' => "Provide a response using the following format: '{adjective}, {sentence}'. Replace '{adjective}' with a varied single-word adjective characterizing the flame's movement, and replace '{sentence}' with a concise, eerie haunting sentence that encapsulates the room's atmosphere with the flames {adjective}. Example output: 'Eerie, the ghost sent shivers down my spine.'"],
+                    ['role' => 'system', 'content' => "Provide a response using the following format: '{adjective}, {sentence}'. Replace '{adjective}' with a varied single-word adjective characterizing the flame's movement, and replace '{sentence}' with a concise, eerie haunting sentence that encapsulates the room's atmosphere with the flames {adjective}. Example output: 'Eerie, the ghost sent shivers down my spine.'"],
                     ['role' => 'user', 'content' => $prompt]
                 ],
                 'max_tokens' => 50,
